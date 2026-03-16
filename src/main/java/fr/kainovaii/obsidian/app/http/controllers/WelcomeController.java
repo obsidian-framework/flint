@@ -1,4 +1,4 @@
-package fr.kainovaii.obsidian.app.controllers;
+package fr.kainovaii.obsidian.app.http.controllers;
 
 import fr.kainovaii.obsidian.http.controller.BaseController;
 import fr.kainovaii.obsidian.http.controller.annotations.Controller;
