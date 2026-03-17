@@ -40,9 +40,9 @@ Spark Java is an excellent micro-framework, but it lacks modern conventions. Thi
 ## Quick Start
 
 ```bash
-git clone https://github.com/kainovaii/obsidian-skeleton
+git clone https://github.com/obsidian-framework/obsidian-skeleton
 cd obsidian-skeleton
-./build.bat
+mvn compile exec:java
 ```
 
 → The app runs on `http://localhost:8888`
