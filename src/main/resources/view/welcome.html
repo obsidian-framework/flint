@@ -5,19 +5,41 @@
         Obsidian_<span class="text-red-500 animate-blink">|</span>
     </h1>
     <p class="text-xs text-zinc-600 mb-12">Java Web Framework</p>
+
     <div class="bg-zinc-950 border border-zinc-900 px-6 py-4 mb-8 flex items-center justify-center gap-3">
         <span class="text-red-500 animate-pulse-dot">●</span>
         <span class="text-sm text-zinc-400">Application is running</span>
     </div>
-    <div class="grid grid-cols-2 gap-px bg-zinc-900 mb-12">
+
+    <div class="grid grid-cols-2 gap-px bg-zinc-900 mb-8">
         <a href="https://obsidian-java.com/docs" class="card-link bg-black px-6 py-4 hover:bg-zinc-950 transition-colors flex items-center justify-between">
             <span class="text-sm text-zinc-400 hover:text-white transition-colors">Docs</span>
             <span class="text-red-500 card-arrow">→</span>
         </a>
-        <a href="https://github.com/obsidian-framework/obsidian-skeleton" class="card-link bg-black px-6 py-4 hover:bg-zinc-950 transition-colors flex items-center justify-between">
+        <a href="https://github.com/obsidian-framework/obsidian" class="card-link bg-black px-6 py-4 hover:bg-zinc-950 transition-colors flex items-center justify-between">
             <span class="text-sm text-zinc-400 hover:text-white transition-colors">GitHub</span>
             <span class="text-red-500 card-arrow">→</span>
         </a>
     </div>
+
+    {% if isLogged %}
+    <div class="bg-zinc-950 border border-zinc-900 px-6 py-4 mb-8">
+        <p class="text-xs text-zinc-600 mb-1 uppercase tracking-widest">Logged in as</p>
+        <p class="text-sm text-white font-bold mb-4">{{ loggedUser.username }}</p>
+        <a href="/logout" class="block w-full border border-zinc-800 hover:border-red-500 text-zinc-500 hover:text-red-500 text-xs py-2 transition-colors tracking-wide">
+            SIGN OUT →
+        </a>
+    </div>
+    {% else %}
+    <a href="/login" class="block w-full bg-red-500 hover:bg-red-600 text-black text-xs font-bold py-3 transition-colors tracking-wide mb-8">
+        SIGN IN →
+    </a>
+    {% endif %}
+
+    <div class="flex items-center justify-center gap-2 text-xs text-zinc-800">
+        <span class="text-red-900">⬡</span>
+        Flint starter kit
+    </div>
+
 </div>
 {% endblock %}

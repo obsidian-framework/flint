@@ -43,4 +43,21 @@ public class UserRepository {
     public User findByEmail(String email) {
         return (User) User.findFirst("email = ?", email);
     }
+
+    /**
+     * Creates and persists a new user with the given username and hashed password.
+     * Role defaults to "USER".
+     *
+     * @param username       the username
+     * @param hashedPassword the already-hashed password (use Auth.hashPassword() before calling)
+     * @return the newly created User
+     */
+    public User create(String username, String hashedPassword) {
+        User user = new User();
+        user.set("username", username);
+        user.set("password", hashedPassword);
+        user.set("role",     "USER");
+        user.saveIt();
+        return user;
+    }
 }
