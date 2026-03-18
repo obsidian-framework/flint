@@ -37,7 +37,6 @@ App runs on `http://localhost:8888`.
 - Everything from [obsidian](https://github.com/obsidian-framework/obsidian)
 - `AuthController` — login, register, logout routes
 - Login and register pages styled and ready
-- Dashboard page with authenticated user info
 
 ## Documentation
 
