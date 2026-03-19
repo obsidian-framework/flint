@@ -45,13 +45,13 @@ public class AuthController extends BaseController {
     @CsrfProtect
     public String login(Request req, Response res) {
         try {
-            if (Auth.login(req.queryParams("username"), req.queryParams("password"), req)) {
-                res.redirect(Auth.getRedirectAfterLogin(req, "/"));
+            if (Auth.login(req.queryParams("username"), req.queryParams("password"))) {
+                res.redirect(Auth.getRedirectAfterLogin("/"));
                 halt();
             }
-            return redirectWithFlash(req, res, "error", "Invalid username or password.", "/login").toString();
+            return redirectWithError( "Invalid username or password.", "/login").toString();
         } catch (LoginLockedException e) {
-            return redirectWithFlash(req, res, "error", e.getMessage(), "/login").toString();
+            return redirectWithError(e.getMessage(), "/login").toString();
         }
     }
 
@@ -96,7 +96,7 @@ public class AuthController extends BaseController {
 
         userRepository.create(username, Auth.hashPassword(password));
 
-        Auth.login(username, password, req);
+        Auth.login(username, password);
         res.redirect("/");
         halt();
         return null;
@@ -108,7 +108,7 @@ public class AuthController extends BaseController {
     @GET("/logout")
     @RequireLogin
     public String logout(Request req, Response res) {
-        Auth.logout(req.session());
+        Auth.logout();
         res.redirect("/login");
         halt();
         return null;

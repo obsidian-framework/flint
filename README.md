@@ -27,7 +27,7 @@
 ```bash
 git clone https://github.com/obsidian-framework/flint my-app
 cd my-app
-mvn compile exec:java
+mvn clean package exec:java
 ```
 
 App runs on `http://localhost:8888`.
