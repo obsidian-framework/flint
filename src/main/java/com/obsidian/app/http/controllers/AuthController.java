@@ -22,8 +22,8 @@ import java.util.Map;
 import static spark.Spark.halt;
 
 @Controller
-public class AuthController extends BaseController {
-
+public class AuthController extends BaseController
+{
     @Inject
     UserRepository userRepository;
 

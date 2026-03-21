@@ -6,8 +6,8 @@ import com.obsidian.core.database.Migration;
  * Creates the "users" table required by the authentication system.
  * Run automatically by the migration runner on first deploy.
  */
-public class CreateUsersTable extends Migration {
-
+public class CreateUsersTable extends Migration
+{
     @Override
     public void up() {
         createTable("users", table -> {
