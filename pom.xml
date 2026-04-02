@@ -12,8 +12,6 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <repositories>
-    <repository>
   <dependencies>
     <dependency>
       <groupId>com.obsidian-java</groupId>
