@@ -82,7 +82,7 @@ public class AuthController extends BaseController
 
         if (result.fails()) {
             return render("auth/register.html", Map.of(
-                    "errors", result.getErrors(),
+                    "errors", result.getErrors().getErrors(),
                     "old",    Map.of("username", username)
             ));
         }
